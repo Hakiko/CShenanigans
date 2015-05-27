@@ -109,7 +109,7 @@ struct avl_node *avl_node_extract(struct avl_node *node, struct avl_node **min) 
         struct avl_node *res = node->right;
         node->right = NULL;
         avl_node_update(node);
-        if (*min)
+        if (min)
             *min = node;
         if (res) {
             avl_node_balance(res);
